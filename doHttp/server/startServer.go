@@ -32,6 +32,8 @@ func StatHttpServer() {
 	http.HandleFunc("/transformation", controllers.StartTransformation) // 设置访问的路由
 	http.HandleFunc("/get_progress", controllers.GetTransformation)     // 设置访问的路由
 	http.HandleFunc("/download", controllers.DownloadFile)              // 设置访问的路由
+	http.HandleFunc("/download_file", controllers.DownloadFileCache)        // 设置访问的路由
+	http.HandleFunc("/download_file_local", controllers.DownloadFileToLocal)       // 设置访问的路由
 
 	err = http.ListenAndServe(":"+serverPort, nil) // 设置监听的端口
 
